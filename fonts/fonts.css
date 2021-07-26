@@ -1,0 +1,11 @@
+@font-face {
+	font-family: Futura;
+	src: url(./FuturaNewBook.otf);
+	font-weight: 400;
+}
+
+@font-face {
+	font-family: Futura;
+	src: url(./FuturaNewMedium.otf);
+	font-weight: 500;
+}
