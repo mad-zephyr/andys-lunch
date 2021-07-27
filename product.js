@@ -563,6 +563,37 @@ window.addEventListener('DOMContentLoaded', () => {
 				show('.food_block_info', index) 
 			} 
 		})
-	}) 
+	})
+
+	const mainFood = document.querySelector('.prod_wrapper')
+
+	if (window.innerWidth < 1201) {
+		mainFood.querySelector('.prod_wrapper_info_weight').style.height = '0px'
+	}
+
+	window.addEventListener('resize', () => {
+		if (window.innerWidth < 1201) {
+			mainFood.querySelector('.prod_wrapper_info_weight').style.height = '0px'
+		} else {
+			mainFood.querySelector('.prod_wrapper_info_weight').style.height = ''
+		}
+	})
+
+	mainFood.querySelector('.info').addEventListener('click', function(e){
+		if (e.target.classList.contains('info_clicked') && e.target.nodeName == "SPAN" ) {
+ 
+			mainFood.querySelector('.prod_wrapper_info_weight').style.height = '0px'
+			mainFood.querySelector('.prod_wrapper_info_weight').style.margin = '0px'
+			e.target.classList.remove('info_clicked') 
+
+		} else if (e.target.classList.contains('info') && e.target.nodeName == "SPAN" ) {
+
+			hide('.food_block_info')
+			e.target.classList.add('info_clicked')
+			mainFood.querySelector('.prod_wrapper_info_weight').style.height = '70px'
+			mainFood.querySelector('.prod_wrapper_info_weight').style.margin = '8px 0px'
+		} 
+	})
+
 })
 

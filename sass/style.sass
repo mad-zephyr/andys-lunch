@@ -1,4 +1,5 @@
 @import './_productCard'
+@import './_mainProdCard'
 	
 html
 	-webkit-box-sizing: border-box
@@ -60,8 +61,7 @@ html
 		stroke: #ffdd00
 		stroke-width: 120px
 		overflow: visible 
-		z-index: 1
-		// r: 140rem
+		z-index: 1 
 		circle
 			cx: calc(100vw / 6)
 			cy: calc(100vh / 6 - 25rem)
@@ -81,194 +81,13 @@ html
 		backdrop-filter: blur(30px)
 		border-radius: 60px 
 		z-index: 0
- 
-.prod
-	position: absolute
-	display: flex
-	left: 50%
-	bottom: 50px
-	transform: translate(-50%)
-	flex-direction: column
-	align-items: center
-	width: 1080px  
-	margin: 0 auto
-	z-index: 9
-	.wrapper
-		position: relative
-		width: 1080px 
-		height: 840px
 
-	img
-		position: absolute
-		bottom: 130px
-		left: 50%
-		transform: translateX(-50%)
-		width: 820px 
-		z-index: 2
-
-	&_wrapper  
-		position: absolute
-		display: flex
-		align-items: center
-		justify-content: space-between
-		padding: 60px
-		bottom: 0
-		width: 100%
-		left: 50%
-		transform: translateX(-50%)
-		background: rgba(249, 247, 241, 0.6)
-		backdrop-filter: blur(24px) 
-		min-height: 340px
-		border: 2px solid #ffffffd8 
-		border-radius: 25px
-		z-index: 1
-		&::after
-			content: ""
-			position: absolute
-			right: -2px
-			width: 4px
-			height: 80%
-			background: #C9202D
-			border-radius: 2px
-		&_text
-			font-family: FuturaPT, Futura New
-			text-rendering: optimizeLegibility
-			font-smoothing: antialiased
-			-webkit-font-smoothing: antialiased
-			font-style: normal
-			font-weight: 400
-			line-height: 1
-			width: 50% 
-			z-index: 5
-			&_subtitle
-				font-size: 20px
-				font-weight: 400px
-				width: 100%
-
-			&_title
-				font-size: 74px
-				font-weight: 450
-				line-height: 1
-				width: 100%
-				margin-top: 10px
-
-			&_weight
-				margin-top: 10px
-				font-size: 20px 
-				span
-					// display: none
-					cursor: pointer
-					height: 20px
-					font-family: FuturaPT, Futura New
-					font-style: normal
-					font-weight: 600
-					font-size: 16px
-					line-height: 100% 
-					text-align: center
-					color:#444444  
-					background: #EEEDED
-					border: 1px solid #D5D0D0
-					box-sizing: border-box
-					padding: 2px 10px
-					border-radius: 50% 
-					transition: 0.3s all ease
-					&:hover
-						background: #FFDD00
-						border: 1px solid #fff 
-						box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.25)
-			&_descr
-				font-size: 18px
-				margin-top: 20px
-				color: #3F3F3F
-
-		&_info
-			width: 285px
-			height: 200px 
-			z-index: 4 
-			&_btns
-				display: flex
-				justify-content: space-between
-				margin-top: 25px
-				width: 100%
-				font-family: FuturaPT, Futura New
-				a
-					display: flex
-					align-items: center
-					justify-content: center
-					color: white
-					text-decoration: none
-					border-radius: 40px
-					text-transform: uppercase
-					height: 46px
-					width: 172px
-					color: white!important
-					background: #C9202D
-					font-size: 18px
-					line-height: 1
-				&_price
-					display: flex
-					align-items: center
-					justify-content: center
-					align-items: center
-					font-size: 18px
-					width: 100px
-					height: 46px
-					color: black
-					border-radius: 40px
-					background: white
-			&_select
-				font-size: 14px
-				width: 100%
-				font-size: 14px
-				line-height: 1
-				margin-top: 10px
-				&_title
-					margin-bottom: 5px
-					font-size: 14px
-				select
-					width: 100%
-					border: 1px solid #DDDDDD
-					height: 30px
-					padding: 0 10px 
-					font-size: 14px
- 
-			&_weight
-				display: flex
-				justify-content: space-between
-				margin-bottom: 20px
-
-				&_units
-					display: flex
-					flex-direction: column
-					align-items: center
-					font-family: FuturaPT, Futura New
-					width: 85px
-					text-align: center
-					background: #D2D2D2
-					border-radius: 3px
-
-				&_title
-					display: flex
-					justify-content: center
-					align-items: center
-					height: 24px
-					text-align: center
-					width: calc( 100% - 4px )
-					background: white
-					border-radius: 3px  
-					margin-top: 2px
-					color: #787878
-					font-size: 12px
-				&_numbers
-					line-height: 1
-					margin-top: 7px
-					font-size: 22px
-					font-weight: 500
-				&_grams
-					font-weight: 500
-					line-height: 1
-					font-size: 11px
-					margin-bottom: 8px
+@media ( max-width: 1200px )
+	.main
+		&-bg
+			width: calc( 100% - 40px )
+			border-radius: 30px
+	 
 
 .info_clicked
 	background: #FFDD00!important
@@ -277,7 +96,7 @@ html
 
 
 .recomand
-	padding: 20px 0 0 40px;
+	padding: 20px 0 40px 0  
 	background: url('https://static.tildacdn.com/tild6164-3538-4233-a535-663631363836/bg2.jpg') center center/cover
 	&_title
 		font-family: FuturaPT, Futura New
@@ -294,7 +113,7 @@ html
 		width: 1240px
 
 
-@media ( max-width: 480px )
+@media (max-width: 480px )
 	#menu
 		display: flex
 		flex-direction: column
