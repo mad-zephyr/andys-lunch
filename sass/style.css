@@ -1,18 +1,10 @@
-html {
-  box-sizing: border-box;
-}
-
-.js-product .t-product__option-variants:after {
-  top: 17px;
-}
-
 .food {
   font-family: FuturaPT, Futura New;
   display: flex;
+  justify-content: center;
   width: 590px;
   min-height: 390px;
   border: 2px solid #fff;
-  display: flex;
   justify-content: center;
   background: rgba(249, 247, 241, 0.7);
   backdrop-filter: blur(24px);
@@ -21,7 +13,7 @@ html {
   margin: 10px;
   box-sizing: border-box;
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0);
-  transition: 0.5s all ease-in;
+  transition: 0.3s box-shadow ease-in;
 }
 
 .food:hover {
@@ -54,8 +46,6 @@ html {
 .food_img {
   display: flex;
   align-items: center;
-  justify-content: center;
-  width: 250px;
 }
 
 .food_img img {
@@ -86,6 +76,9 @@ html {
 .food_block_info {
   display: flex;
   margin-top: 10px;
+  overflow: hidden;
+  height: 0px;
+  transition: 0.3s height ease;
 }
 
 .food_block_info_elem {
@@ -130,6 +123,7 @@ html {
   font-family: FuturaPT, Futura New;
   font-size: 18px;
   font-weight: 500;
+  transition: 0.3s all ease;
 }
 
 .food_block_grams span {
@@ -221,6 +215,85 @@ html {
 .food .t-product__option-variants:after .t-product__option {
   position: relative;
   margin-top: 10px;
+}
+
+@media (max-width: 1200px) {
+  .recomand {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .recomand_wrapper {
+    width: 100% !important;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+  }
+  .recomand_wrapper::-webkit-scrollbar {
+    height: 0px;
+  }
+  .food {
+    width: calc( 50% - 35px);
+  }
+  .food_block {
+    width: 50%;
+  }
+  .food_block_info {
+    width: 100%;
+  }
+  .food_block_info_elem {
+    width: calc( 33% - 15px);
+  }
+  .food_block_info_elem_title {
+    width: calc( 100% - 4px);
+    line-height: 24px;
+  }
+}
+
+@media (max-width: 960px) {
+  .food {
+    flex-direction: column;
+    align-items: center;
+    width: 300px;
+    padding: 10px 0 15px 0;
+  }
+  .food_block {
+    padding-top: 0px;
+    padding-bottom: 0px;
+    margin-top: 0px;
+    width: calc( 100% - 20px);
+    text-align: center;
+  }
+  .food_block_descr {
+    position: absolute;
+    top: 10px;
+    width: calc( 100% - 20px);
+  }
+  .food_block_info {
+    margin-top: 0px;
+  }
+  .food_block_price {
+    margin-top: 10px;
+  }
+  .food_img {
+    margin-top: 10px;
+    width: 100%;
+    height: 230px;
+  }
+  .food_img img {
+    margin: 0 auto;
+  }
+  .food .prod_wrapper_info_select_title {
+    display: none;
+  }
+}
+
+html {
+  box-sizing: border-box;
+}
+
+.js-product .t-product__option-variants:after {
+  top: 17px;
 }
 
 * {

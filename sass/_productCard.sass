@@ -1,0 +1,260 @@
+.food
+	font-family: FuturaPT, Futura New
+	display: flex
+	justify-content: center
+	width: 590px
+	min-height: 390px
+	border: 2px solid #fff
+	justify-content: center
+	background: rgba(249, 247, 241, 0.7) 
+	backdrop-filter: blur(24px)
+	border-radius: 30px
+	background: rgba(249, 247, 241, 0.7)
+	margin: 10px 
+	box-sizing: border-box 
+	box-shadow: 0px 4px 4px rgba(0, 0, 0, 0) 
+	transition: 0.3s box-shadow ease-in
+ 
+	&:hover
+		-webkit-box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25)
+		box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25)
+	&::after
+		content: ""
+		position: absolute
+		top: 50%
+		right: 0
+		-webkit-transform: translateY(-50%)
+		transform: translateY(-50%)
+		width: 4px
+		height: 230px
+		background: #C9202D
+		-webkit-transition: 0.3s all ease-in
+		transition: 0.3s all ease-in
+
+	&_wrapper 
+		display: flex 
+		flex-wrap: wrap
+		position: absolute
+		left: 50% 
+		transform: translateX(-50%)
+		width: 1240px
+		top: 130px
+		z-index: 1
+
+	&_img 
+		display: flex 
+		align-items: center  
+
+		img
+			width: 200px
+			height: 262px
+			object-fit: cover
+
+	&_block
+		padding: 28px 0px
+		width: 300px
+		margin-top: 10px
+
+		&_descr
+			font-family: FuturaPT, Futura New
+			font-size: 18px
+			line-height: 1
+
+		&_title
+			font-family: FuturaPT, Futura New
+			font-size: 34px
+			font-weight: 500
+			line-height: 1.3
+
+		&_info 
+			display: flex
+			margin-top: 10px
+			overflow: hidden
+			height: 0px
+			transition: 0.3s height ease
+
+			&_elem
+				width: 84px
+				height: 70px 
+				display: flex
+				border-radius: 3px 
+				flex-direction: column 
+				align-items: center
+				background: #cccccc
+				margin-right: 15px
+
+				&_title
+					margin-top: 2px
+					border-radius: 3px
+					text-align: center
+					font-size: 14px
+					color: #787878
+					background: #fff
+					width: 80px
+					line-height: 28px
+
+				&_numbers
+					text-align: center
+					font-size: 20px
+					color: #000
+					line-height: 1
+					margin-top: 3px
+
+				&_descr
+					text-align: center
+					font-size: 12px
+					color: #000
+					line-height: 1
+
+		&_grams 
+			margin-top: 20px
+			font-family: FuturaPT, Futura New
+			font-size: 18px
+			font-weight: 500
+			transition: 0.3s all ease
+			span
+				margin-left: 4px
+				height: 20px
+				font-family: FuturaPT, Futura New
+				font-style: normal
+				font-weight: 600
+				font-size: 14px
+				line-height: 100% 
+				text-align: center
+				color:#444444  
+				background: #EEEDED
+				border: 1px solid #D5D0D0
+				box-sizing: border-box
+				padding: 1px 8px
+				border-radius: 50%
+				cursor: pointer
+				transition: 0.3s all ease
+				&:hover
+					background: #FFDD00
+					border: 1px solid #fff 
+					box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.25)
+
+		&_text
+			font-family: FuturaPT, Futura New
+			font-weight: 300
+			line-height: 1.2
+			margin-top: 10px 
+			font-size: 16px 
+
+		&_price
+			display: -webkit-box
+			display: -ms-flexbox
+			display: flex
+			margin-top: 20px
+
+			&_wrapper
+				font-family: FuturaPT, Futura New
+				display: -webkit-box
+				display: -ms-flexbox
+				display: flex 
+				align-items: center 
+				justify-content: center
+				background: #fff
+				border-radius: 40px
+				height: 46px
+				width: 100px
+				font-size: 18px
+
+	&_block_price a
+		font-family: FuturaPT, Futura New
+		text-transform: uppercase
+		display: -webkit-box
+		display: -ms-flexbox
+		display: flex 
+		align-items: center 
+		justify-content: center
+		line-height: 1
+		text-decoration: none
+		border-radius: 40px
+		border: none
+		width: 170px
+		height: 46px
+		background: #c9202d
+		color: white !important
+		font-weight: 400
+		font-size: 18px
+		margin-left: 10px
+
+	.t-product__option-variants:after
+		display: none
+		content: ' '
+		width: 0
+		height: 0
+		border-style: solid
+		border-width: 6px 5px 0 5px
+		border-color: #000 transparent transparent transparent
+		position: absolute
+		right: 10px
+		top: 0
+		bottom: 0
+		margin: auto
+		pointer-events: none
+		margin-top: 31px 
+		.t-product__option
+			position: relative
+			margin-top: 10px
+
+@media (max-width: 1200px)
+	.prod
+		
+	.recomand 
+		display: flex
+		flex-direction: column
+		align-items: center
+		// overflow-y: hidden
+		&_wrapper
+			width: 100%!important
+			display: flex
+			flex-direction: row 
+			justify-content: center
+			// overflow-y: scroll
+			&::-webkit-scrollbar
+				height: 0px 
+	
+	.food
+		width: calc( 50% - 35px)
+		&_block
+			width: 50%
+			&_info
+				width: 100%
+				&_elem
+					width: calc( 33% - 15px )
+					&_title
+						width: calc( 100% - 4px )
+						line-height: 24px
+
+@media (max-width: 960px)
+	.food
+		flex-direction: column
+		align-items: center
+		width: 300px
+		padding: 10px 0 15px 0
+		&_block
+			padding-top: 0px
+			padding-bottom: 0px
+			margin-top: 0px
+			width: calc( 100% - 20px )
+			text-align: center
+			&_descr
+				position: absolute
+				top: 10px
+				width: calc( 100% - 20px )
+			&_info
+				margin-top: 0px
+			&_price
+				margin-top: 10px
+		&_img 
+			margin-top: 10px
+			width: 100%
+			height: 230px 
+			img
+				margin: 0 auto
+		.prod_wrapper_info
+			&_select
+				&_title
+					display: none

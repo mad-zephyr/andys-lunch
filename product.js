@@ -524,10 +524,24 @@ window.addEventListener('DOMContentLoaded', () => {
 		}) 
 	})
 
-	function hide(selector){
-		document.querySelectorAll(selector).forEach(elem => {
-			elem.style.display = 'none'
+	function hide(selector){ 
+		
+		document.querySelectorAll(selector).forEach(elem => { 
+			elem.style.height = `0px` 
+			elem.nextElementSibling.style.marginTop = '0px'
+			try{
+				elem.nextElementSibling.lastChild.classList.remove('info_clicked')
+			} catch(e){}
+
 		})
+	}
+
+	function show(selector, index){ 
+		const wightInfoBLocks = document.querySelectorAll(selector)
+		const wightInfoBLocksHeight = window.getComputedStyle(wightInfoBLocks[0])
+		
+		wightInfoBLocks[index].style.height = '70px'
+		wightInfoBLocks[index].nextElementSibling.style.marginTop = '20px'
 	}
 
 	const foodCards = document.querySelectorAll('.food')
@@ -535,21 +549,20 @@ window.addEventListener('DOMContentLoaded', () => {
 	foodCards.forEach((card, index) => {
 		hide('.food_block_info')
 
-		card.addEventListener('click', function(e) { 
-
-			let display = false
+		card.addEventListener('click', function(e) {  
+			
+			if (e.target.classList.contains('info_clicked') && e.target.nodeName == "SPAN" ) {
  
-			if (e.target.classList.contains('info') && e.target.nodeName == "SPAN" ) {
-
-				e.stopPropagation()
 				hide('.food_block_info')
-				e.target.classList.toggle('info_clicked')
-				e.target.parentNode.parentNode.querySelector('.food_block_info').style.display = ""
+				e.target.classList.remove('info_clicked') 
 
-			}
- 
+			} else if (e.target.classList.contains('info') && e.target.nodeName == "SPAN" ) {
+  
+				hide('.food_block_info')
+				e.target.classList.add('info_clicked')
+				show('.food_block_info', index) 
+			} 
 		})
-	})
- 
+	}) 
 })
 
