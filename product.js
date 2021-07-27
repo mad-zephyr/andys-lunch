@@ -319,7 +319,7 @@ window.addEventListener('DOMContentLoaded', () => {
 						SKU: <span class="js-store-prod-sku js-product-sku " itemprop="sku">${currentProduct.product.sku}</span>
 					</div>
 				</div>
-				<div class="prod_wrapper_text_weight">${allWeight} — <strong>${kcal}</strong></div>
+				<div class="prod_wrapper_text_weight">${allWeight} — <strong>${kcal}</strong> <span class="info">i</span></div>
 				<div class="prod_wrapper_text_descr">${currentProductDescr[0]}</div>
 			</div>
 			<div class="prod_wrapper_info">
@@ -483,7 +483,7 @@ window.addEventListener('DOMContentLoaded', () => {
 						<div class="food_block_info_elem_descr">${gramm()}</div>
 					</div>
 				</div>
-				<div class="food_block_grams">${text[4].split("—")[0]} — <strong>${text[4].split("—")[1]}</strong></div>
+				<div class="food_block_grams">${text[4].split("—")[0]} — <strong>${text[4].split("—")[1]}</strong><span class="info">i</span></div>
 				<div class="food_block_text"> ${text[0]} </div>
 				
 				<div class="js-product-controls-wrapper t-store__card__prod-controls-wrapper prod_wrapper_info_select">
@@ -522,7 +522,34 @@ window.addEventListener('DOMContentLoaded', () => {
 				priceBtn.setAttribute('data-product-price-def', initialPrice + optionPrice);
 				priceBtn.innerText = initialPrice + optionPrice; 
 		}) 
-	}) 
+	})
+
+	function hide(selector){
+		document.querySelectorAll(selector).forEach(elem => {
+			elem.style.display = 'none'
+		})
+	}
+
+	const foodCards = document.querySelectorAll('.food')
+	
+	foodCards.forEach((card, index) => {
+		hide('.food_block_info')
+
+		card.addEventListener('click', function(e) { 
+
+			let display = false
+ 
+			if (e.target.classList.contains('info') && e.target.nodeName == "SPAN" ) {
+
+				e.stopPropagation()
+				hide('.food_block_info')
+				e.target.classList.toggle('info_clicked')
+				e.target.parentNode.parentNode.querySelector('.food_block_info').style.display = ""
+
+			}
+ 
+		})
+	})
  
 })
 
