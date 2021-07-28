@@ -657,7 +657,7 @@
         -ms-flex-direction: column;
             flex-direction: column;
     width: calc( 50% - 20px);
-    min-height: 450px;
+    min-height: 320px;
     right: 0px;
     bottom: 50px;
     -webkit-transform: translateX(0);
@@ -793,7 +793,6 @@ h1, h2, h3, h4 {
 }
 
 html {
-  font-size: calc(100vw / 100);
   text-rendering: optimizeLegibility;
   font-smoothing: antialiased;
   font-family: FuturaPT, Futura New;
@@ -866,9 +865,18 @@ html {
 }
 
 @media (max-width: 1200px) {
+  .main {
+    max-height: 700px;
+  }
   .main-bg {
     width: calc( 100% - 40px);
     border-radius: 30px;
+  }
+}
+
+@media (max-width: 960px) {
+  .main {
+    max-height: 800px;
   }
 }
 
