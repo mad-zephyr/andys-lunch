@@ -203,6 +203,34 @@ window.addEventListener('DOMContentLoaded', () => {
 	const href = window.location.href;
 	const productID = []
 	const regex = href.split('/');
+
+	const gramm = () => { 
+		if (lang != 'ru') {
+			return 'gram'
+		} else {
+			return "грамм"
+		}
+	}
+
+	const addToCartBtnText = () => {
+		if (lang == 'ru') {
+			return 'Заказать'
+		} else if (lang == 'ro') {
+			return "În coș"
+		} else {
+			return "Order"
+		}
+	}
+
+	const recomandTitle = () => {
+		if (lang === 'ru') {
+			return "Также рекомендуем"
+		} else if ( lang === 'ro') {
+			return 'Vă recomandăm'
+		} else {
+			return "We also recommend"
+		}
+	}
  
 	async function getDataProduct(url) { 
 	const request = await window.fetch(url) 
@@ -265,35 +293,7 @@ window.addEventListener('DOMContentLoaded', () => {
 	};
 	option() 
 
-	const gramm = () => {
-
-		if (lang != 'ru') {
-			return 'gram'
-		} else {
-			return "грамм"
-		}
-	}
-
-	const addToCartBtnText = () => {
-		if (lang == 'ru') {
-			return 'Заказать'
-		} else if (lang == 'ro') {
-			return "În coș"
-		} else {
-			return "Order"
-		}
-	}
-
-	const recomandTitle = () => {
-		if (lang === 'ru') {
-			return "Также рекомендуем"
-		} else if ( lang === 'ro') {
-			return 'Vă recomandăm'
-		} else {
-			return "We also recommend"
-		}
-	}
-
+	
 	const mainProduct = document.createElement('div')
 	mainProduct.classList.add('prod', 'js-store-product', 'js-product', 't-store__product-snippet')
 	mainProduct.setAttribute('data-product-lid', currentProduct.product.uid)
@@ -413,8 +413,8 @@ window.addEventListener('DOMContentLoaded', () => {
 
 		const product = document.createElement('div'); 
 		const text = data.descr
-				.replace(/[</]+(strong)>|[</]+(ul)>|<li>/gi, "") 
-				.split(/<\/li>/); 
+			.replace(/[</]+(strong)>|[</]+(ul)>|<li>/gi, "") 
+			.split(/<\/li>/); 
 
 		const img = JSON.parse(data.gallery) 
 			
